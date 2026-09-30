@@ -1,50 +1,5 @@
-<div class="flex items-center justify-between">
-    <hgroup>
-        <h1 class="title">Tasks</h1>
-        <p class="text-faded">View and manage all of your tasks.</p>
-    </hgroup>
-    <a href="#add-task" class="btn btn-secondary">Add Task</a>
-</div>
-
-<dialog id="task-info-popup">
-    <div class="flex justify-between items-center">
-        <p class="title mb-2" id="taskName"></p>
-        <span class="badge badge-incomplete" id="taskStatus">Status</span>
-    </div>
-    <p id="taskDeadline"></p>
-    <p id="taskDescription"></p>
-    <p id="taskPriority"></p>
-</dialog>
-
-<table class="table mt-5" x-data="tasks">
-    <thead>
-        <tr>
-            <th>
-                <span><i data-lucide="book-text"></i> Subject</span>
-            </th>
-            <th>
-                <span><i data-lucide="case-sensitive"></i> Task Name</span>
-            </th>
-            <th>
-                <span><i data-lucide="chart-no-axes-column"></i> Priority</span>
-            </th>
-            <th>
-                <span><i data-lucide="circle-check"></i> Status</span>
-            </th>
-            <th>
-                <span><i data-lucide="calendar-check"></i> Deadline</span>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <template x-for="(task, index) in tasks" :key="index">
-            <tr class="cursor-pointer" @click="modal(task)">
-                <td x-text="subject(task)"></td>
-                <td x-text="task.taskName"></td>
-                <td x-text="priority(task)"></td>
-                <td><span class="badge badge-incomplete">Incomplete</span></td>
-                <td x-text="deadline(task)"></td>
-            </tr>
-        </template>
-    </tbody>
-</table>
+<hgroup>
+    <h1 class="title">Tasks.</h1>
+    <div class="divider"></div>
+    <p class="text-faded">View and manage all of your tasks.</p>
+</hgroup>

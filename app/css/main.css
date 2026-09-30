@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css");
 @import "tailwindcss";
 
 @theme {
-    /* --color-primary: #02c992; */
     --color-primary: #4F8CFF;
     --color-tertiary: #B07300;
 
-    --font-sans: 'Outfit', sans-serif;
+    --font-sans: 'Inter Tight', sans-serif;
     --font-serif: 'Instrument Serif', serif;
 }
 
@@ -133,25 +132,25 @@
     }
 
     .dashboard{
-        @apply min-h-screen md:grid md:grid-rows-[50px_1fr] md:grid-cols-[240px_1fr];
+        @apply min-h-screen md:grid md:grid-rows-[60px_1fr] md:grid-cols-[240px_1fr];
 
         header{
-            @apply p-4 flex items-center col-span-2 border-b border-stone-900;
+            @apply px-7 flex items-center col-span-2;
 
             span{
-                @apply w-full text-white text-center;
+                @apply w-full text-white font-bold;
             }
         }
 
         aside{
-            @apply border-r border-stone-900 p-3;
+            @apply px-4;
 
             ul{
                 @apply flex flex-col gap-1;
             }
 
             li a{
-                @apply block px-3 py-2 rounded-md text-base transition hover:bg-stone-900;
+                @apply block px-3 py-2 rounded-md text-sm transition hover:bg-stone-900;
             }
 
             li a.active{
@@ -160,10 +159,18 @@
         }
 
         main{
-            @apply relative p-10 flex flex-col gap-4;
+            @apply relative p-12 flex flex-col gap-4 rounded-tl-xl border-l border-t border-stone-900;
+
+            hgroup{
+                @apply flex items-center gap-4;
+
+                .divider{
+                    @apply h-8 w-[1px] bg-stone-900;
+                }
+            }
 
             .title{
-                @apply text-3xl font-bold;
+                @apply text-6xl font-bold tracking-tighter;
             }
 
             .table{

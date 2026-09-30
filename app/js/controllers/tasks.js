@@ -7,19 +7,6 @@ export const tasks = () => {
         get tasks() {
             return storage.get('tasks').reverse();
         },
-        modal(task) {
-            const modal = document.querySelector('#task-info-popup');
-            modal.showModal();
-
-            Object.entries(task).forEach(([key, value]) => {
-                const el = modal.querySelector(`#${key}`);
-                if(el){
-                    el.innerText = value;
-                }
-            });
-
-            document.querySelector('#taskName').innerText = task.taskName;
-        },
         subject(task){
             return storage.get('subjects')[task.taskSubject].subjectName;
         },
