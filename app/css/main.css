@@ -4,8 +4,8 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #4F8CFF;
-    --color-tertiary: #B07300;
+    /* --color-primary: #4F8CFF; */
+    /* --color-tertiary: #B07300; */
 
     --font-sans: 'Inter Tight', sans-serif;
     --font-serif: 'Instrument Serif', serif;
@@ -58,7 +58,7 @@
     }
 
     button, .btn {
-        @apply rounded-lg inline-block w-fit bg-primary text-white p-2 px-4;
+        @apply rounded-lg inline-block w-fit bg-red-500 font-semibold tracing-wide text-white p-2 px-4.5;
     }
 
     .badge{
@@ -138,7 +138,7 @@
             @apply px-7 flex items-center col-span-2;
 
             span{
-                @apply w-full text-white font-bold;
+                @apply text-lg w-full text-white font-bold;
             }
         }
 
@@ -159,10 +159,14 @@
         }
 
         main{
-            @apply relative p-12 flex flex-col gap-4 rounded-tl-xl border-l border-t border-stone-900;
+            @apply relative p-12 flex flex-col gap-6 rounded-tl-xl border-l border-t border-stone-900;
 
             hgroup{
-                @apply flex items-center gap-4;
+                @apply flex items-center gap-3;
+
+                h1 span{
+                    @apply text-red-500;
+                }
 
                 .divider{
                     @apply h-8 w-[1px] bg-stone-900;
@@ -196,14 +200,18 @@
             }
 
             .items-grid{
-                @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2;
+                @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4;
 
                 .item{
-                    @apply border border-stone-800 rounded-lg p-4;
+                    @apply flex flex-col gap-1 bg-stone-900 border border-stone-800 rounded-xl p-6;
 
                     .item-info{
+
                         span{
-                            @apply text-lg font-semibold;
+                            @apply block h-[2lh] text-4xl font-semibold;
+                        }
+                        .item-info-divider{
+                            @apply w-full h-[1px] bg-stone-800;
                         }
 
                         p{

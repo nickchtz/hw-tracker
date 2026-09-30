@@ -1,6 +1,6 @@
 <div class="flex items-center justify-between">
-    <h1 class="title">Subjects</h1>
-    <a href="#add-subject" class="btn btn-secondary">Add Subject</a>
+    <h1 class="title">Subjects<span>.</span></h1>
+    <a href="#add-subject" class="btn">Add Subject</a>
 </div>
 
 <div class="items-grid" x-data="subjects">
@@ -8,9 +8,9 @@
         <div class="item">
             <div class="item-info">
                 <span x-text="subject.subjectName"></span>
-                <p x-text="frequency(subject)"></p>
             </div>
             <div class="item-actions">
+                
                 <a href="#">Edit</a> 
                 <span>▪</span>
                 <a href="#">Remove</a>

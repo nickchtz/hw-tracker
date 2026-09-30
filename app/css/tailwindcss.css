@@ -27,6 +27,8 @@
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
     --font-weight-semibold: 600;
@@ -39,8 +41,6 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-primary: #4F8CFF;
-    --color-tertiary: #B07300;
   }
 }
 @layer base {
@@ -198,12 +198,6 @@
   .visible {
     visibility: visible;
   }
-  .mt-5 {
-    margin-top: calc(var(--spacing) * 5);
-  }
-  .mb-2 {
-    margin-bottom: calc(var(--spacing) * 2);
-  }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
   }
@@ -213,42 +207,17 @@
   .inline {
     display: inline;
   }
-  .table {
-    display: table;
-  }
   .w-fit {
     width: fit-content;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
-  .cursor-pointer {
-    cursor: pointer;
-  }
-  .resize {
-    resize: both;
-  }
-  .flex-col {
-    flex-direction: column;
   }
   .items-center {
     align-items: center;
   }
   .justify-between {
     justify-content: space-between;
-  }
-  .gap-2 {
-    gap: calc(var(--spacing) * 2);
-  }
-  .gap-4 {
-    gap: calc(var(--spacing) * 4);
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
   }
   .font-serif {
     font-style: italic;
@@ -267,13 +236,6 @@
   }
   .text-white {
     color: var(--color-white);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .blur {
     --tw-blur: blur(8px);
@@ -323,9 +285,11 @@
     display: inline-block;
     width: fit-content;
     border-radius: var(--radius-lg);
-    background-color: var(--color-primary);
+    background-color: var(--color-red-500);
     padding: calc(var(--spacing) * 2);
-    padding-inline: calc(var(--spacing) * 4);
+    padding-inline: calc(var(--spacing) * 4.5);
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
     color: var(--color-white);
   }
   .badge {
@@ -447,6 +411,8 @@
       padding-inline: calc(var(--spacing) * 7);
       span {
         width: 100%;
+        font-size: var(--text-lg);
+        line-height: var(--tw-leading, var(--text-lg--line-height));
         --tw-font-weight: var(--font-weight-bold);
         font-weight: var(--font-weight-bold);
         color: var(--color-white);
@@ -483,7 +449,7 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      gap: calc(var(--spacing) * 4);
+      gap: calc(var(--spacing) * 6);
       border-top-left-radius: var(--radius-xl);
       border-top-style: var(--tw-border-style);
       border-top-width: 1px;
@@ -494,7 +460,10 @@
       hgroup {
         display: flex;
         align-items: center;
-        gap: calc(var(--spacing) * 4);
+        gap: calc(var(--spacing) * 3);
+        h1 span {
+          color: var(--color-red-500);
+        }
         .divider {
           height: calc(var(--spacing) * 8);
           width: 1px;
@@ -533,7 +502,7 @@
       .items-grid {
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
-        gap: calc(var(--spacing) * 2);
+        gap: calc(var(--spacing) * 4);
         @media (width >= 48rem) {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
@@ -541,17 +510,28 @@
           grid-template-columns: repeat(4, minmax(0, 1fr));
         }
         .item {
-          border-radius: var(--radius-lg);
+          display: flex;
+          flex-direction: column;
+          gap: var(--spacing);
+          border-radius: var(--radius-xl);
           border-style: var(--tw-border-style);
           border-width: 1px;
           border-color: var(--color-stone-800);
-          padding: calc(var(--spacing) * 4);
+          background-color: var(--color-stone-900);
+          padding: calc(var(--spacing) * 6);
           .item-info {
             span {
-              font-size: var(--text-lg);
-              line-height: var(--tw-leading, var(--text-lg--line-height));
+              display: block;
+              height: 2lh;
+              font-size: var(--text-4xl);
+              line-height: var(--tw-leading, var(--text-4xl--line-height));
               --tw-font-weight: var(--font-weight-semibold);
               font-weight: var(--font-weight-semibold);
+            }
+            .item-info-divider {
+              height: 1px;
+              width: 100%;
+              background-color: var(--color-stone-800);
             }
             p {
               font-size: var(--text-sm);
@@ -616,16 +596,6 @@
 @property --tw-skew-y {
   syntax: "*";
   inherits: false;
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @property --tw-blur {
   syntax: "*";
@@ -699,6 +669,11 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-tracking {
   syntax: "*";
   inherits: false;
@@ -711,8 +686,6 @@
       --tw-rotate-z: initial;
       --tw-skew-x: initial;
       --tw-skew-y: initial;
-      --tw-border-style: solid;
-      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
@@ -730,6 +703,7 @@
       --tw-translate-y: 0;
       --tw-translate-z: 0;
       --tw-font-weight: initial;
+      --tw-border-style: solid;
       --tw-tracking: initial;
     }
   }
