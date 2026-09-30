@@ -1,5 +1,4 @@
 import { routes } from './routes.js';
-import { _ } from '../controllers/_.js';
 import '../libs/lucide.js'; 
 
 export const router = {
@@ -25,7 +24,12 @@ export const router = {
             lucide.createIcons();
         }   
 
-        _();
+        const navLinks = document.querySelectorAll('aside ul li a');
+
+        navLinks.forEach((navLink) => {
+            const href = new URL(navLink.href).hash;
+            href === route ? navLink.classList.add('active') : navLink.classList.remove('active');
+        });
 
         if(typeof(page.onload) === "function") {
             await page.onload();

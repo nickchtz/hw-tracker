@@ -23,8 +23,8 @@
     }
 
     body { 
-        background: var(--color-neutral-900);   
-        color: var(--color-neutral-200);
+        background: var(--color-stone-950);   
+        color: var(--color-stone-200);
         width: 100%;
         scroll-behavior: smooth;
         overflow-x: hidden;
@@ -37,7 +37,7 @@
 }
 
 @utility text-faded {
-    color: var(--color-neutral-300);
+    color: var(--color-stone-300);
 }
 
 @utility text-highlight{
@@ -55,7 +55,7 @@
 
 @layer components {
     dialog{
-        @apply rounded-xl abs-center p-8 bg-neutral-900 border-neutral-800 text-neutral-200 w-100 h-60;
+        @apply rounded-xl abs-center p-8 bg-stone-900 border-stone-800 text-stone-200 w-100 h-60;
     }
 
     button, .btn {
@@ -63,7 +63,7 @@
     }
 
     .badge{
-        @apply text-sm p-1.5 px-3 cursor-pointer rounded-lg border border-neutral-800;
+        @apply text-sm p-1.5 px-3 cursor-pointer rounded-lg border border-stone-800;
     }
 
     .badge-incomplete{
@@ -89,7 +89,7 @@
 
 
     .btn-secondary{
-        @apply rounded-lg border border-neutral-800 bg-transparent;
+        @apply rounded-lg border border-stone-800 bg-transparent;
     }
 
     .input{
@@ -113,11 +113,11 @@
     }
 
     input, select, .checkbox{
-        @apply p-2 px-3 border border-neutral-800 rounded-lg;
+        @apply p-2 px-3 border border-stone-800 rounded-lg;
     }
 
     select option{
-        @apply bg-neutral-900;
+        @apply bg-stone-900;
     }
 
     .hero{
@@ -133,10 +133,10 @@
     }
 
     .dashboard{
-        @apply min-h-screen md:grid md:grid-rows-[60px_1fr] md:grid-cols-[240px_1fr];
+        @apply min-h-screen md:grid md:grid-rows-[50px_1fr] md:grid-cols-[240px_1fr];
 
         header{
-            @apply p-4 flex items-center col-span-2 border-b border-neutral-800;
+            @apply p-4 flex items-center col-span-2 border-b border-stone-900;
 
             span{
                 @apply w-full text-white text-center;
@@ -144,14 +144,18 @@
         }
 
         aside{
-            @apply border-r border-neutral-800 p-5;
+            @apply border-r border-stone-900 p-3;
 
             ul{
                 @apply flex flex-col gap-1;
             }
 
             li a{
-                @apply block border border-neutral-800 px-3 py-2 rounded transition hover:text-white;
+                @apply block px-3 py-2 rounded-md text-base transition hover:bg-stone-900;
+            }
+
+            li a.active{
+                @apply bg-stone-900;
             }
         }
 
@@ -181,14 +185,14 @@
             }
 
             .table thead{
-                @apply text-white text-left border-b border-neutral-800;
+                @apply text-white text-left border-b border-stone-800;
             }
 
             .items-grid{
                 @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2;
 
                 .item{
-                    @apply border border-neutral-800 rounded-lg p-4;
+                    @apply border border-stone-800 rounded-lg p-4;
 
                     .item-info{
                         span{
