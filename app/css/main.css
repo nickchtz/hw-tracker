@@ -58,7 +58,7 @@
     }
 
     button, .btn {
-        @apply rounded-lg inline-block w-fit bg-red-500 font-semibold tracing-wide text-white p-2 px-4.5;
+        @apply p-2 px-4.5 inline-block rounded-lg w-fit bg-red-500 text-white font-semibold tracking-wide;
     }
 
     .badge{
@@ -98,11 +98,19 @@
             @apply text-sm;
         }
 
-        .checkbox-grid{
-            @apply gap-2 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5;
+        .checkbox-grid {
+            @apply gap-2 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-7;
 
-            .checkbox{
-                @apply flex items-center gap-2;
+            .checkbox {
+                @apply flex items-center gap-2 transition cursor-pointer;
+
+                input {
+                    @apply hidden;
+                }
+
+                &:has(input:checked) {
+                    @apply bg-stone-800 scale-102;
+                }
             }
         }
     }
