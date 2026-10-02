@@ -23,6 +23,10 @@ export const router = {
         if(document.querySelector('[data-lucide]')) {
             lucide.createIcons();
         }   
+ 
+        if(typeof(page.onload) === "function") {
+            await page.onload();
+        }
 
         const navLinks = document.querySelectorAll('aside ul li a');
 
@@ -30,10 +34,6 @@ export const router = {
             const href = new URL(navLink.href).hash;
             href === route ? navLink.classList.add('active') : navLink.classList.remove('active');
         });
-
-        if(typeof(page.onload) === "function") {
-            await page.onload();
-        }
     }
 };
 

@@ -91,41 +91,6 @@
         @apply rounded-lg border border-stone-800 bg-transparent;
     }
 
-    .input{
-        @apply flex flex-col gap-1 mb-4;
-
-        label{
-            @apply text-sm;
-        }
-
-        .checkbox-grid {
-            @apply gap-2 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-7;
-
-            .checkbox {
-                @apply flex items-center gap-2 transition cursor-pointer;
-
-                input {
-                    @apply hidden;
-                }
-
-                &:has(input:checked) {
-                    @apply bg-stone-800 scale-102;
-                }
-            }
-        }
-    }
-
-    .input-group{
-        @apply grid grid-cols-2 gap-3;
-    }
-
-    input, select, .checkbox{
-        @apply p-2 px-3 border border-stone-800 rounded-lg;
-    }
-
-    select option{
-        @apply bg-stone-900;
-    }
 
     .hero{
         @apply w-full max-w-[1000px] md:w-[1000px] abs-center;
@@ -185,26 +150,40 @@
                 @apply text-6xl font-bold tracking-tighter;
             }
 
-            .table{
-                @apply w-full;
+            table{
+                @apply p-2 w-full;
 
-                th span{
-                    @apply flex gap-2 items-center;
+                tr, td, th{
+                    @apply p-2 py-2.5 font-semibold text-white text-sm text-left border border-stone-900 cursor-pointer ;
+                }
 
-                    svg{
-                        @apply w-5;
+                tr td:first-child{
+                    @apply border-l border-l-transparent;
+                }
+
+                tr td:last-child{
+                    @apply border-r border-r-transparent;
+                }
+
+                tr:first-child{
+                    @apply border-none font-normal text-stone-200/80;
+
+                    th{
+                        @apply border-none;
+                        
+                        span{
+                            @apply flex items-center gap-2 font-normal text-sm;
+
+                            svg{
+                                @apply w-5;
+                            }
+                        }
                     }
                 }
-            }
-            
-            .table,
-            .table th,
-            .table td {
-                @apply p-3;
-            }
 
-            .table thead{
-                @apply text-white text-left border-b border-stone-800;
+                td, th{
+                    @apply hover:bg-stone-900/40;
+                }
             }
 
             .items-grid{

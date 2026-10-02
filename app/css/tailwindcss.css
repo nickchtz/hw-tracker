@@ -31,6 +31,7 @@
     --text-4xl--line-height: calc(2.5 / 2.25);
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
+    --font-weight-normal: 400;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --tracking-tighter: -0.05em;
@@ -332,62 +333,6 @@
     border-color: var(--color-stone-800);
     background-color: transparent;
   }
-  .input {
-    margin-bottom: calc(var(--spacing) * 4);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing);
-    label {
-      font-size: var(--text-sm);
-      line-height: var(--tw-leading, var(--text-sm--line-height));
-    }
-    .checkbox-grid {
-      display: grid;
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-      gap: calc(var(--spacing) * 2);
-      @media (width >= 48rem) {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-      @media (width >= 64rem) {
-        grid-template-columns: repeat(7, minmax(0, 1fr));
-      }
-      .checkbox {
-        display: flex;
-        cursor: pointer;
-        align-items: center;
-        gap: calc(var(--spacing) * 2);
-        transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-        transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-        transition-duration: var(--tw-duration, var(--default-transition-duration));
-        input {
-          display: none;
-        }
-        &:has(input:checked) {
-          --tw-scale-x: 102%;
-          --tw-scale-y: 102%;
-          --tw-scale-z: 102%;
-          scale: var(--tw-scale-x) var(--tw-scale-y);
-          background-color: var(--color-stone-800);
-        }
-      }
-    }
-  }
-  .input-group {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: calc(var(--spacing) * 3);
-  }
-  input, select, .checkbox {
-    border-radius: var(--radius-lg);
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-    border-color: var(--color-stone-800);
-    padding: calc(var(--spacing) * 2);
-    padding-inline: calc(var(--spacing) * 3);
-  }
-  select option {
-    background-color: var(--color-stone-900);
-  }
   .hero {
     position: absolute;
     top: calc(1 / 2 * 100%);
@@ -495,26 +440,69 @@
         --tw-tracking: var(--tracking-tighter);
         letter-spacing: var(--tracking-tighter);
       }
-      .table {
+      table {
         width: 100%;
-        th span {
-          display: flex;
-          align-items: center;
-          gap: calc(var(--spacing) * 2);
-          svg {
-            width: calc(var(--spacing) * 5);
+        padding: calc(var(--spacing) * 2);
+        tr, td, th {
+          cursor: pointer;
+          border-style: var(--tw-border-style);
+          border-width: 1px;
+          border-color: var(--color-stone-900);
+          padding: calc(var(--spacing) * 2);
+          padding-block: calc(var(--spacing) * 2.5);
+          text-align: left;
+          font-size: var(--text-sm);
+          line-height: var(--tw-leading, var(--text-sm--line-height));
+          --tw-font-weight: var(--font-weight-semibold);
+          font-weight: var(--font-weight-semibold);
+          color: var(--color-white);
+        }
+        tr td:first-child {
+          border-left-style: var(--tw-border-style);
+          border-left-width: 1px;
+          border-left-color: transparent;
+        }
+        tr td:last-child {
+          border-right-style: var(--tw-border-style);
+          border-right-width: 1px;
+          border-right-color: transparent;
+        }
+        tr:first-child {
+          --tw-border-style: none;
+          border-style: none;
+          --tw-font-weight: var(--font-weight-normal);
+          font-weight: var(--font-weight-normal);
+          color: color-mix(in srgb, oklch(92.3% 0.003 48.717) 80%, transparent);
+          @supports (color: color-mix(in lab, red, red)) {
+            color: color-mix(in oklab, var(--color-stone-200) 80%, transparent);
+          }
+          th {
+            --tw-border-style: none;
+            border-style: none;
+            span {
+              display: flex;
+              align-items: center;
+              gap: calc(var(--spacing) * 2);
+              font-size: var(--text-sm);
+              line-height: var(--tw-leading, var(--text-sm--line-height));
+              --tw-font-weight: var(--font-weight-normal);
+              font-weight: var(--font-weight-normal);
+              svg {
+                width: calc(var(--spacing) * 5);
+              }
+            }
           }
         }
-      }
-      .table, .table th, .table td {
-        padding: calc(var(--spacing) * 3);
-      }
-      .table thead {
-        border-bottom-style: var(--tw-border-style);
-        border-bottom-width: 1px;
-        border-color: var(--color-stone-800);
-        text-align: left;
-        color: var(--color-white);
+        td, th {
+          &:hover {
+            @media (hover: hover) {
+              background-color: color-mix(in srgb, oklch(21.6% 0.006 56.043) 40%, transparent);
+              @supports (color: color-mix(in lab, red, red)) {
+                background-color: color-mix(in oklab, var(--color-stone-900) 40%, transparent);
+              }
+            }
+          }
+        }
       }
       .items-grid {
         display: grid;
@@ -695,21 +683,6 @@
   inherits: false;
   initial-value: solid;
 }
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -737,9 +710,6 @@
       --tw-font-weight: initial;
       --tw-tracking: initial;
       --tw-border-style: solid;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
     }
   }
 }

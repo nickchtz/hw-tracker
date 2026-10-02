@@ -6,34 +6,34 @@ import { addSubject } from '../controllers/addSubject.js';
 export const routes = {
     '#notFound': {
         file: 'notFound.html',
-        title: 'Not found',
+        title: 'Page not found',
     },
     '#overview': {
         file: 'overview.html',
         title: 'Overview',
     },
     '#tasks': {
-        file: 'tasks/tasks.html',
+        file: 'tasks.html',
         title: 'Tasks',
         onload: tasks
     },
-    '#add-task': {
-        file: 'tasks/add-task.html',
-        title: 'Add Task',
-        onload: addTask
-    },
-    '#calendar': {
-        file: 'calendar.html',
-        title: 'Calendar',
-    },
-    '#subjects': {
-        file: 'subjects/subjects.html',
-        title: 'Subjects',
-        onload: subjects
-    },
-    '#add-subject': {
-        file: 'subjects/add-subject.html',
-        title: 'Add Subject',
-        onload: addSubject
-    },
+    // '#add-task': {
+    //     file: 'tasks/add-task.html',
+    //     title: 'Add Task',
+    //     onload: addTask
+    // },
+    // '#calendar': {
+    //     file: 'calendar.html',
+    //     title: 'Calendar',
+    // },
+    // '#subjects': {
+    //     file: 'subjects/subjects.html',
+    //     title: 'Subjects',
+    //     onload: subjects
+    // },
+    // '#add-subject': {
+    //     file: 'subjects/add-subject.html',
+    //     title: 'Add Subject',
+    //     onload: addSubject
+    // },
 };
