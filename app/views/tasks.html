@@ -4,7 +4,9 @@
     <p class="text-faded">View and manage all of your tasks.</p>
 </hgroup>
 
-<a href="" class="btn btn-sm">New Task</a>
+<div x-data="tasks">
+    <a href="" @click.prevent="newTask" class="btn btn-sm">New Task</a>
+</div>
 
 <table>
     <tr>

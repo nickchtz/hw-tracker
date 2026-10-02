@@ -22,6 +22,15 @@ export const tasks = () => {
                 dateStyle: 'medium',
                 timeStyle: 'short' 
             }).format(new Date(task.taskDeadline));
+        },
+        newTask() {
+            dialog.create('Add new task', `
+                <div x-data="{ message: '' }">
+                    <input type="text" x-model="message">
+                
+                    <span x-text="message"></span>
+                </div>
+           `);
         }
     }));
 }
