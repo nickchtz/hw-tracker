@@ -296,6 +296,12 @@
     letter-spacing: var(--tracking-wide);
     color: var(--color-white);
   }
+  .btn-sm {
+    padding: var(--spacing);
+    padding-inline: calc(var(--spacing) * 2.25);
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
   .badge {
     cursor: pointer;
     border-radius: var(--radius-lg);
@@ -399,12 +405,18 @@
         transition-duration: var(--tw-duration, var(--default-transition-duration));
         &:hover {
           @media (hover: hover) {
-            background-color: var(--color-stone-900);
+            background-color: color-mix(in srgb, oklch(21.6% 0.006 56.043) 40%, transparent);
+            @supports (color: color-mix(in lab, red, red)) {
+              background-color: color-mix(in oklab, var(--color-stone-900) 40%, transparent);
+            }
           }
         }
       }
       li a.active {
-        background-color: var(--color-stone-900);
+        background-color: color-mix(in srgb, oklch(21.6% 0.006 56.043) 60%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-stone-900) 60%, transparent);
+        }
       }
     }
     main {
@@ -479,6 +491,14 @@
           th {
             --tw-border-style: none;
             border-style: none;
+            &:hover {
+              @media (hover: hover) {
+                background-color: color-mix(in srgb, oklch(21.6% 0.006 56.043) 40%, transparent);
+                @supports (color: color-mix(in lab, red, red)) {
+                  background-color: color-mix(in oklab, var(--color-stone-900) 40%, transparent);
+                }
+              }
+            }
             span {
               display: flex;
               align-items: center;
@@ -489,16 +509,6 @@
               font-weight: var(--font-weight-normal);
               svg {
                 width: calc(var(--spacing) * 5);
-              }
-            }
-          }
-        }
-        td, th {
-          &:hover {
-            @media (hover: hover) {
-              background-color: color-mix(in srgb, oklch(21.6% 0.006 56.043) 40%, transparent);
-              @supports (color: color-mix(in lab, red, red)) {
-                background-color: color-mix(in oklab, var(--color-stone-900) 40%, transparent);
               }
             }
           }

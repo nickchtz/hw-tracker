@@ -61,6 +61,10 @@
         @apply p-2 px-4.5 inline-block rounded-lg w-fit bg-red-500 text-white font-semibold tracking-wide;
     }
 
+    .btn-sm{
+        @apply p-1 px-2.25 text-sm;
+    }
+
     .badge{
         @apply text-sm p-1.5 px-3 cursor-pointer rounded-lg border border-stone-800;
     }
@@ -123,11 +127,11 @@
             }
 
             li a{
-                @apply block px-3 py-2 rounded-md text-sm transition hover:bg-stone-900;
+                @apply block px-3 py-2 rounded-md text-sm transition hover:bg-stone-900/40;
             }
 
             li a.active{
-                @apply bg-stone-900;
+                @apply bg-stone-900/60;
             }
         }
 
@@ -169,7 +173,7 @@
                     @apply border-none font-normal text-stone-200/80;
 
                     th{
-                        @apply border-none;
+                        @apply border-none hover:bg-stone-900/40;
                         
                         span{
                             @apply flex items-center gap-2 font-normal text-sm;
@@ -179,10 +183,6 @@
                             }
                         }
                     }
-                }
-
-                td, th{
-                    @apply hover:bg-stone-900/40;
                 }
             }
 
