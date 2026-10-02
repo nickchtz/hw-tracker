@@ -57,6 +57,34 @@
         @apply rounded-xl abs-center p-8 bg-stone-900 border-stone-800 text-stone-200 w-100 h-60;
     }
 
+    .dialog-overlay{
+        @apply abs-center w-full h-full bg-stone-950/60 backdrop-blur-sm z-1; 
+    }
+
+    .dialog{
+        @apply bg-stone-950 p-8 py-6 border border-stone-900 abs-center z-2 w-115 rounded-xl flex flex-col gap-2;
+
+        .dialog-header{
+            @apply flex items-center justify-between;
+
+            #dialog-title{
+                @apply font-semibold text-lg;
+            }
+
+            #dialog-dismiss{
+                @apply p-2 rounded-lg cursor-pointer transition hover:bg-stone-800/50;
+            }
+        }
+    }
+
+    .divider{
+        @apply h-8 w-[1px] bg-stone-900;
+    }
+
+    .divider-horizontal{
+        @apply h-[0.1px] w-full bg-stone-900;
+    }
+
     button, .btn {
         @apply p-2 px-4.5 inline-block rounded-lg w-fit bg-red-500 text-white font-semibold tracking-wide;
     }
@@ -145,17 +173,16 @@
                     @apply text-red-500;
                 }
 
-                .divider{
-                    @apply h-8 w-[1px] bg-stone-900;
-                }
             }
+            
+
 
             .title{
                 @apply text-6xl font-bold tracking-tighter;
             }
 
             table{
-                @apply p-2 w-full;
+                @apply p-2 w-full rounded-lg overflow-hidden;
 
                 tr, td, th{
                     @apply p-2 py-2.5 font-semibold text-white text-sm text-left border border-stone-900 cursor-pointer ;

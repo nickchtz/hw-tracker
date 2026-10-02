@@ -8,9 +8,24 @@
     <title>Dashboard &#9642; Homework Tracker</title>
 </head>
 <body class="dashboard">
+    
+    <div class="dialog-overlay hidden"></div>
+
+    <div class="dialog hidden">
+        <div class="dialog-header">
+            <span id="dialog-title"></span>
+            <span id="dialog-dismiss"><i data-lucide="x"></i></span>
+        </div>
+        <div class="divider-horizontal"></div>
+        <div class="dialog-body">
+
+        </div>
+    </div>
+
     <header>
         <span id="title"></span>
     </header>
+    
     <aside>
         <ul>
             <li><a href="#overview">Overview</a></li>
@@ -19,9 +34,8 @@
             <li><a href="#subjects">My Subjects</a></li>
         </ul>
     </aside>
-    <main id="app">
 
-    </main>
+    <main id="app"></main>
 </body>
 <script src="./app/js/app.js" type="module"></script>
 </html> 
