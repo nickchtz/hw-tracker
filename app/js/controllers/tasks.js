@@ -25,10 +25,24 @@ export const tasks = () => {
         },
         newTask() {
             dialog.create('Add new task', `
-                <div x-data="{ message: '' }">
-                    <input type="text" x-model="message">
-                
-                    <span x-text="message"></span>
+                <div class="form">
+                    <div class="input">
+                        <label>Task Name</label>
+                        <input type="text" name="taskName" placeholder="e.g Revise pages 73-80">
+                    </div>
+                    <div class="input">
+                        <label>Task Name</label>
+                        <input type="text" name="taskName" placeholder="e.g Revise pages 73-80">
+                    </div>
+                    <div class="input">
+                        <label>Task Name</label>
+                        <input type="text" name="taskName" placeholder="e.g Revise pages 73-80">
+                    </div>
+                    <div class="input">
+                        <label>Task Name</label>
+                        <input type="text" name="taskName" placeholder="e.g Revise pages 73-80">
+                    </div>
+                    <button class="btn">Create task</button>
                 </div>
            `);
         }

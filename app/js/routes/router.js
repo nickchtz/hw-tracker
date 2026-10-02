@@ -17,7 +17,8 @@ export const router = {
         const html = await response.text();
         
         
-        document.querySelector('#title').innerText = page.title;
+        document.title = `${page.title}`;
+        document.querySelector('#title').innerText = document.title;
         document.querySelector('#app').innerHTML = html;
         
         if(document.querySelector('[data-lucide]')) {

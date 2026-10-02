@@ -9,6 +9,7 @@ export const dialog = {
         const dialogDismiss = dialog.dialogElement.querySelector('#dialog-dismiss');
 
         dialogDismiss.addEventListener('click', dialog.dismiss);
+        dialog.dialogOverlay.addEventListener('click', dialog.dismiss);
         window.addEventListener('keydown', event => event.key === 'Escape' && dialog.dismiss());
         
         this.show();

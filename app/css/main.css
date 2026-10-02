@@ -62,7 +62,7 @@
     }
 
     .dialog{
-        @apply bg-stone-950 p-8 py-6 border border-stone-900 abs-center z-2 w-115 rounded-xl flex flex-col gap-2 scale-100 transition-all duration-300 ease-in-out;
+        @apply bg-stone-950 p-8 py-6 border border-stone-900 abs-center z-2 w-115 rounded-xl flex flex-col gap-2 scale-100 transition-all duration-200 ease-in-out;
         
         .dialog-header{
             @apply flex items-center justify-between;
@@ -75,10 +75,14 @@
                 @apply p-2 rounded-lg cursor-pointer transition hover:bg-stone-800/50;
             }
         }
+
+        .dialog-body{
+            @apply mt-2;
+        }
     }
 
     .dialog.dialog-closed {
-        @apply scale-0 opacity-0 invisible;
+        @apply scale-90 opacity-0 invisible;
     }
 
     .divider{
@@ -89,8 +93,24 @@
         @apply h-[0.1px] w-full bg-stone-900;
     }
 
+    .form{
+        @apply flex flex-col gap-3;
+    }
+
+    .input{
+        @apply flex flex-col gap-1;
+
+        label{
+            @apply text-sm text-stone-200/80;
+        }
+    }
+
+    input{
+        @apply border border-stone-900 p-3 px-4 text-sm rounded-lg transition;
+    }
+
     button, .btn {
-        @apply p-2 px-4.5 inline-block rounded-lg w-fit bg-red-500 text-white font-semibold tracking-wide;
+        @apply p-2 px-4.5 inline-block rounded-lg w-fit bg-red-500 text-white font-semibold tracking-wide transition hover:saturate-125;
     }
 
     .btn-sm{
@@ -159,11 +179,11 @@
             }
 
             li a{
-                @apply block px-3 py-2 rounded-md text-sm transition hover:bg-stone-900/40;
+                @apply block px-3 py-2 rounded-md text-sm transition-all text-stone-200/80 hover:bg-stone-900/40;
             }
 
             li a.active{
-                @apply bg-stone-900/60;
+                @apply pl-3.5 bg-stone-900/60 text-stone-200 font-bold;
             }
         }
 
