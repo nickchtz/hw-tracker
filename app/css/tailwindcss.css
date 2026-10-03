@@ -267,6 +267,7 @@
     width: 100%;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    overflow-y: hidden;
   }
 }
 @layer components {
@@ -325,7 +326,6 @@
     border-color: var(--color-stone-900);
     background-color: var(--color-stone-950);
     padding: calc(var(--spacing) * 8);
-    padding-block: calc(var(--spacing) * 6);
     transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
@@ -501,7 +501,7 @@
     }
   }
   .dashboard {
-    min-height: 100vh;
+    height: 100vh;
     @media (width >= 48rem) {
       display: grid;
     }
@@ -560,7 +560,6 @@
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-stone-900) 60%, transparent);
         }
-        padding-left: calc(var(--spacing) * 3.5);
         --tw-font-weight: var(--font-weight-bold);
         font-weight: var(--font-weight-bold);
         color: var(--color-stone-200);
@@ -571,6 +570,7 @@
       display: flex;
       flex-direction: column;
       gap: calc(var(--spacing) * 6);
+      overflow-y: auto;
       border-top-left-radius: var(--radius-xl);
       border-top-style: var(--tw-border-style);
       border-top-width: 1px;
@@ -731,6 +731,39 @@
           font-size: var(--text-lg);
           line-height: var(--tw-leading, var(--text-lg--line-height));
           color: var(--color-white);
+        }
+      }
+      .settings-section {
+        .settings-section-title {
+          margin-bottom: calc(var(--spacing) * 2);
+          --tw-font-weight: var(--font-weight-semibold);
+          font-weight: var(--font-weight-semibold);
+          text-transform: uppercase;
+        }
+        .setting {
+          margin-bottom: calc(var(--spacing) * 2);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-radius: var(--radius-xl);
+          border-style: var(--tw-border-style);
+          border-width: 1px;
+          border-color: var(--color-stone-800);
+          background-color: color-mix(in srgb, oklch(21.6% 0.006 56.043) 40%, transparent);
+          @supports (color: color-mix(in lab, red, red)) {
+            background-color: color-mix(in oklab, var(--color-stone-900) 40%, transparent);
+          }
+          padding: calc(var(--spacing) * 4);
+        }
+        .setting-name {
+          --tw-font-weight: var(--font-weight-semibold);
+          font-weight: var(--font-weight-semibold);
+        }
+        .setting-description {
+          font-size: var(--text-sm);
+          line-height: var(--tw-leading, var(--text-sm--line-height));
+          color: var(--color-stone-300);
+          color: var(--color-stone-200);
         }
       }
     }

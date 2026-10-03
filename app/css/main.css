@@ -27,6 +27,7 @@
         width: 100%;
         scroll-behavior: smooth;
         overflow-x: hidden;
+        overflow-y: hidden;
     }
 }
 
@@ -62,7 +63,7 @@
     }
 
     .dialog{
-        @apply bg-stone-950 p-8 py-6 border border-stone-900 abs-center z-2 w-115 rounded-xl flex flex-col gap-2 scale-100 transition-all duration-200 ease-in-out;
+        @apply bg-stone-950 p-8 border border-stone-900 abs-center z-2 w-115 rounded-xl flex flex-col gap-2 scale-100 transition-all duration-200 ease-in-out;
         
         .dialog-header{
             @apply flex items-center justify-between;
@@ -161,7 +162,7 @@
     }
 
     .dashboard{
-        @apply min-h-screen md:grid md:grid-rows-[60px_1fr] md:grid-cols-[240px_1fr];
+        @apply h-screen md:grid md:grid-rows-[60px_1fr] md:grid-cols-[240px_1fr];
 
         header{
             @apply px-7 flex items-center col-span-2;
@@ -183,12 +184,12 @@
             }
 
             li a.active{
-                @apply pl-3.5 bg-stone-900/60 text-stone-200 font-bold;
+                @apply bg-stone-900/60 text-stone-200 font-bold;
             }
         }
 
         main{
-            @apply relative p-12 flex flex-col gap-6 rounded-tl-xl border-l border-t border-stone-900;
+            @apply relative p-12 flex flex-col gap-6 rounded-tl-xl border-l border-t border-stone-900 overflow-y-auto;
 
             hgroup{
                 @apply flex items-center gap-3;
@@ -274,6 +275,24 @@
 
                 h2{
                     @apply text-lg text-white;
+                }
+            }
+
+            .settings-section{
+                .settings-section-title{
+                    @apply uppercase font-semibold mb-2;
+                }
+
+                .setting{
+                    @apply p-4 mb-2 flex justify-between items-center bg-stone-900/40 border border-stone-800 rounded-xl;
+                }
+
+                .setting-name{
+                    @apply font-semibold;
+                }
+
+                .setting-description{
+                    @apply text-sm text-faded text-stone-200;
                 }
             }
         }

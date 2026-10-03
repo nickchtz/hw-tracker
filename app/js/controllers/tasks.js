@@ -30,18 +30,6 @@ export const tasks = () => {
                         <label>Task Name</label>
                         <input type="text" name="taskName" placeholder="e.g Revise pages 73-80">
                     </div>
-                    <div class="input">
-                        <label>Task Name</label>
-                        <input type="text" name="taskName" placeholder="e.g Revise pages 73-80">
-                    </div>
-                    <div class="input">
-                        <label>Task Name</label>
-                        <input type="text" name="taskName" placeholder="e.g Revise pages 73-80">
-                    </div>
-                    <div class="input">
-                        <label>Task Name</label>
-                        <input type="text" name="taskName" placeholder="e.g Revise pages 73-80">
-                    </div>
                     <button class="btn">Create task</button>
                 </div>
            `);

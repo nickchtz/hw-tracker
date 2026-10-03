@@ -12,6 +12,10 @@ export const routes = {
         file: 'overview.html',
         title: 'Overview',
     },
+    '#settings': {
+        file: 'settings.html',
+        title: 'Settings',        
+    },
     '#tasks': {
         file: 'tasks.html',
         title: 'Tasks',
